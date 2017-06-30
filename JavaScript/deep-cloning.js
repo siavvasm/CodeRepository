@@ -1,7 +1,7 @@
 // 1. Define the JavaScript object that should be copied
 var obj1 = {'name':'John', 'surname':'Doe', 'values':[1, 2, 3]};
 
-// 2. Copy the object by using the JSON.stringify and JSON.parse libraries
+// 2. Copy the object by using the JSON.stringify and JSON.parse operations
 var obj2 = JSON.stringify(obj1);
 obj2 = JSON.parse(obj2);
 
