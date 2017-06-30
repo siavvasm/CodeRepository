@@ -1,4 +1,3 @@
-
 window.onload = function() { 
 
 	// 1. Load the locally stored data
