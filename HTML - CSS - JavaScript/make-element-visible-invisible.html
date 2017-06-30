@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>What Can JavaScript Do?</h1>
+
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<div id="button-group">
+	<button type="button" onclick="toggleDisplay()">Click Me!</button>
+	<button type="button" id="button-2"> Useless Button </button>
+	<button type="button"> Another Useless Button </button>
+</div>
+	
+<br>
+
+<div id="button-group-2">
+	<button type="button" onclick="toggleVisibility()">Click Me!</button>
+	<button type="button" id="button-3" style="visibility:visible"> Useless Button </button>
+	<button type="button"> Another Useless Button </button>
+</div>
+
+<script>
+	/**
+	 *	Toggle the display style property of the desired button.
+	 */
+	var previous1 = 'none';
+    
+    function toggleDisplay() {
+    	temp1 = previous1;
+        previous1 = document.getElementById('button-2').style.display;
+    	document.getElementById('button-2').style.display = temp1;
+    }
+
+	/**
+	 *	Toggle the visibility style property of the desired button.
+	 */
+	var previous2 = 'hidden';
+    
+    function toggleVisibility() {
+    	temp2 = previous2;
+        previous2 = document.getElementById('button-3').style.visibility;
+    	document.getElementById('button-3').style.visibility = temp2;
+    }
+	
+</script>
+</body>
+</html> 

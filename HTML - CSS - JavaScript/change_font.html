@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>What Can JavaScript Do?</h1>
+
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="toggleFontSize()">Click Me!</button>
+
+<script>
+	var previous = '35px';
+    
+    function toggleFontSize() {
+    	temp = previous;
+        previous = document.getElementById('demo').style.fontSize;
+    	document.getElementById('demo').style.fontSize = temp;
+    }
+</script>
+</body>
+</html> 

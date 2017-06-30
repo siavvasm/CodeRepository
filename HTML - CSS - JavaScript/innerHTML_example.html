@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<input id="input"> Input </input>
+<button id="button" onclick="buttonClicked()"> Click me!!! </button>
+<p>My First Paragraph.</p>
+
+<p id="demo"></p>
+
+<script>
+	/**
+	 * This function is called when the button is clicked by
+	 * the user.
+	 */
+	function buttonClicked() {
+
+		// Get the value of the text field
+		var x = document.getElementById("input").value;
+		
+		// Check if the value is numeric
+		if(!isNaN(x)) {
+			// Change the value of the desired paragraph
+			document.getElementById("demo").innerHTML = parseInt(x) + 6;
+		} else {
+			alert("Please provide a numeric value in the field");
+		}
+		
+	}
+</script>
+
+</body>
+</html> 

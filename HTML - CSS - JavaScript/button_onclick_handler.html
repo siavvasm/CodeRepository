@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+
+<h1 id="h1">My First JavaScript</h1>
+
+<!-- First Button -->
+<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<!-- Second Button -->
+<button id="button-2" onclick="buttonClicked()"> Click me! </button>
+
+<!-- Third Button -->
+<button id="button-3"> No! Click Me! </button>
+
+<!-- Fourth Button -->
+<button id="button-4"> jQuerry </button>
+
+<script>
+	/*
+	 *	Method 2: Hardcoded function call
+	 */
+	function buttonClicked() {
+
+		document.getElementById("h1").innerHTML = "Button Clicked!";
+		
+	}
+
+	/*
+	 * Method 3: Handler added via the script
+	 */
+	 
+	// Get the desired button 
+	var but3 = document.getElementById("button-3");
+
+	// Define an onclick handler for this button
+	but3.onclick = function() {
+		alert("You have just clicked the third button");
+	}
+	
+	/*
+	 * Method 4: Handler added via jquerry
+	 */
+	 
+	 $("#button-4").click(function(){
+		$("#demo-2").fadeOut();
+		}
+	 );
+	  
+	 // Alternative Version: Toggle
+/*
+	 var state = 0;
+	 
+	 $("#button-4").click(function(){
+			if(state == 0) {
+				$("#demo-2").fadeOut();
+				state = 1;
+			} else {
+				$("#demo-2").fadeIn();
+				state = 0;
+			}
+		}
+	 );
+*/
+</script>
+
+<p id="demo"></p>
+<p id="demo-2">jQuerry is awesome!!!</p>
+
+
+
+</body>
+</html> 
