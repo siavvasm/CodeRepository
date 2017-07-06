@@ -1,0 +1,36 @@
+<html>
+	<head>
+	
+		<!-- Import the script that contains the MathJax functions for processing LaTeX expressions -->
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		
+		<!-- Define the desired delimiters -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+		
+	</head>
+	
+	<body>
+		<div align="center">
+			<h2> Embedding Math Equations using LaTeX </h2>
+			<hr>
+		</div>
+		
+		<div id="maths-sec" align="center">
+		
+			<!-- A paragraph that contains inline and displayed mathematical equations -->
+			<p>
+				The $x$ value should be provided as input to the $F$ equation in order
+				for the prediction to be available.
+				<br><br><br>
+				
+				Another useful expression is provided below:
+				\[X = \frac{{ - b \pm \sqrt {{b^2} - 4ac} }}{{2a}}\]
+			</p>
+		</div>
+		
+	</body>
+</html>
