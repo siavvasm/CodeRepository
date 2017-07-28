@@ -1,0 +1,131 @@
+<html>
+	<!-- 
+		This HTML page demonstrates how the Highcharts JavaScript API can
+		be used in order to plot a desired barchart. It is based on an example
+		retrieved from the original documentation page of the API. The 
+		functionality of the page is as follows:
+			1. An initial version of the barchart is displayed to the user's screen
+			2. A button is available for updating the data of the barchart.
+	 -->
+	<head>
+		<script src="https://code.highcharts.com/highcharts.src.js"></script>
+	</head>
+	
+	<body>
+	  
+
+		<div id="container">
+		
+		</div>
+		
+		<br><hr><br>
+		
+		<button onclick="updateChart()">Update Data</button>
+		
+		<script>
+		
+			// 1. Initialize the barcharts
+			var tokyo = [99.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4];
+			var new_york = [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3];
+			var london = [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2];
+			var berlin = [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1];
+			
+			// 2. Define the function that plots the Barchart
+			function plotBarcharts() {
+			
+				Highcharts.chart('container', {
+					chart: {
+						type: 'column'
+					},
+					title: {
+						text: 'Monthly Average Rainfall'
+					},
+					subtitle: {
+						text: 'Source: WorldClimate.com'
+					},
+					xAxis: {
+						categories: [
+							'Jan',
+							'Feb',
+							'Mar',
+							'Apr',
+							'May',
+							'Jun',
+							'Jul',
+							'Aug',
+							'Sep',
+							'Oct',
+							'Nov',
+							'Dec'
+						],
+						crosshair: true
+					},
+					yAxis: {
+						min: 0,
+						title: {
+							text: 'Rainfall (mm)'
+						}
+					},
+					tooltip: {
+						headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+						pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+							'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+						footerFormat: '</table>',
+						shared: true,
+						useHTML: true
+					},
+					plotOptions: {
+						column: {
+							pointPadding: 0.2,
+							borderWidth: 0
+						}
+					},
+					series: [{
+						name: 'Tokyo',
+						data: tokyo
+
+					}, {
+						name: 'New York',
+						data: new_york
+
+					}, {
+						name: 'London',
+						data: london
+
+					}, {
+						name: 'Berlin',
+						data: berlin
+
+					}]
+				});
+			}
+			
+			// 3. Plot the Barchart to the user's screen
+			plotBarcharts();
+			
+			/**
+			 *	A function for updating the content of the Barchart.
+			 *  It is invoked when the "Update" button is clicked.
+			 */
+			function updateChart() {
+			
+				// 1. Change the values of the barcharts
+				tokyo = [1199.9, 71.5, 1106.4, 2129.2, 2144.0, 2176.0, 2135.6, 2148.5, 2216.4, 2194.1, 2295.6, 2254.4];
+				new_york = [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3];
+				london = [2248.9, 2238.8, 2239.3, 2241.4, 2247.0, 2248.3, 2259.0, 2259.6, 2252.4, 2265.2, 2259.3, 2251.2];
+				berlin = [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1];
+			
+				// 2. Replot the chart
+				plotBarcharts();
+				
+			}
+		
+		
+		</script>
+	</body>
+	
+<html>
+
+
+
+
